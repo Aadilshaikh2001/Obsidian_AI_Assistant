@@ -1,0 +1,36 @@
+# Cornelius-Ollama Configuration
+# ==============================
+
+# Ollama LLM Settings
+ollama:
+  host: "http://localhost:11434"
+  model: "qwen3-coder-next:cloud"
+  timeout_seconds: 120
+  stream: true
+  options:
+    temperature: 0.7
+    num_ctx: 4096
+
+# Obsidian Vault Settings
+vault:
+  path: "D:/Obsidian/Obsidian_AI_Assistant"
+  inbox: "inbox"
+  top_k: 3
+  min_score: 0.1
+  exclude_dirs:
+    - ".obsidian"
+    - ".trash"
+    - "templates"
+  index_refresh_on_startup: true
+
+# Session Settings
+session:
+  max_history_messages: 20
+  stream_tokens: true
+
+# Voice Settings (Whisper Speech-to-Text)
+voice:
+  enabled: true
+  model: "base"  # Options: tiny, base, small, medium, large
+  language: "en"  # Language code (e.g., "en", "es") or null for auto-detect
+  record_duration: 0  # Seconds (0 = unlimited, press Enter to stop)

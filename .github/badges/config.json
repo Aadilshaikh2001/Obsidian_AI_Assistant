@@ -1,0 +1,25 @@
+# Badge configuration file
+{
+  "badges": [
+    {
+      "id": "tests",
+      "endpoint": "tests.json",
+      "type": "shields"
+    },
+    {
+      "id": "coverage",
+      "endpoint": "coverage.json",
+      "type": "shields"
+    },
+    {
+      "id": "python",
+      "endpoint": "python.json",
+      "type": "shields"
+    },
+    {
+      "id": "status",
+      "endpoint": "status.json",
+      "type": "markdown"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cornelius-ollama"
+version = "0.1.0"
+description = "CLI-first Obsidian AI Assistant with Ollama, BM25, and Whisper"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Claude Code", email = "claude-code@anthropic.com"},
+]
+requires-python = ">=3.11"
+dependencies = [
+    "rank-bm25>=0.2.2",
+    "python-frontmatter>=1.1.0",
+    "requests>=2.31.0",
+    "pyyaml>=6.0.1",
+    "python-dotenv>=1.0.0",
+    "rich>=13.7.0",
+    "click>=8.1.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/cornelius-ollama/cornelius"
+Documentation = "https://github.com/cornelius-ollama/cornelius#readme"
+Repository = "https://github.com/cornelius-ollama/cornelius.git"
+Issues = "https://github.com/cornelius-ollama/cornelius/issues"
+
+[project.scripts]
+cornelius = "src.main:main"
+
+[tool.setuptools]
+packages = ["src", "src.ollama", "src.vault", "src.chat", "src.voice"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v"
+filterwarnings = [
+    "ignore::UserWarning",
+    "ignore::DeprecationWarning",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py311', 'py312', 'py313']
+include = '\.pyi?$'
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "venv",
+    "activate",
+    "env",
+    "docs",
+    "build",
+    "dist",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/site-packages/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
