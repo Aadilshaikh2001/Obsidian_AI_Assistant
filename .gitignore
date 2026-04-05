@@ -4,25 +4,13 @@ __pycache__/
 *$py.class
 *.so
 .Python
+
+# Environment
 .env/
 .venv/
-env/
 venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+activate/
+activate.bak/
 
 # IDE
 .idea/
@@ -31,70 +19,20 @@ var/
 *.swo
 *~
 
-# Environment
-.env
-.env.local
-.env.*.local
-
 # Logs
 *.log
+logs/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Project specific
-.claude/
-.claude-flow/
-DOC/
-
-# Test coverage
-htmlcov/
-.coverage
-pytest-cache/
 
 # Distribution
+build/
+dist/
 *.egg-info/
-.eggs/
-
-# Virtual environment (activate folder)
-activate/
-activate.bak/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Config files (sensitive)
-config.yaml
-.env
-.env.local
-.env.*.local
-
-# Logs
-logs/
-*.log
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# CI/CD
-.github/
-.gitlab-ci.yml
-.travis.yml
-
-# Docker
-Dockerfile
-.docker/
-
-# Documentation build
-docs/_build/
-docs/_static/
-docs/_templates/
+.installed.cfg
+*.egg
 
 # Cache
 .cache/
@@ -105,3 +43,45 @@ __pycache__/
 .diagnostic_cache/
 .pytype/
 .cython_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker
+Dockerfile
+.docker/
+
+# Documentation build
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Configuration files with sensitive data
+.env
+.env.*
+!config.yaml
+!.env.example
+
+# Claude workflow directory
+.claude-flow/
+.claude/
+
+# Project files
+CLAUDE.md
+DEMO.md
+PHASE1_CLOSEOUT.md
+SETUP.md
+
+# Old flat structure files
+chat_loop.py
+ollama_client.py
+orchestrator.py
+vault_retriever.py
+vault_writer.py
+voice_processor.py
+
+# Prompts directory
+prompts/
+
+# Audio model
+tiny.pt
